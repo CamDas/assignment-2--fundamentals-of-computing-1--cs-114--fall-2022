@@ -1,33 +1,21 @@
-import java.util.Scanner;  // Import the Scanner class
+import java.util.Scanner;
 
 public class Assignment2 {
     public static void main(String[] args) {
-        double number;
-        double space = 0;
-        double column;
-        double row;
+        int number;
+        int space;
+        int row;
         System.out.println ("Enter a number:");
         Scanner scan = new Scanner(System.in);
-        number = scan.nextDouble();
+        number = scan.nextInt();
 
-
-        number = number / 2.1;                                          //Breaks input in half
-
-        if (space != number) {
-            for (space = 0; space > number; space ++)
-            System.out.print(" ");
+        for (space = 1; space < number; space++) {
+            for (row = space; row <= number; row++) {
+                System.out.print (" ");
             }
-        else
-
-            for (space = 0; space > number; space ++)
-            System.out.print("*");
-
-        for (column = 0; column < number; column++) {
-            for (row = 0; row < column; row++) {
-                System.out.print("**");
+            for (row = 1; row <= space; row++) {
+                System.out.print("*");
             }
-            System.out.print("*\n");
         }
     }
 }
-
