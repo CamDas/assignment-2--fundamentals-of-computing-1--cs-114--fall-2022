@@ -12,6 +12,25 @@ public class Assignment2 {
         Scanner scan = new Scanner(System.in);
         number = scan.nextInt();
 
+        if (number % 2 == 0) {
+
+            for (space = 1; space <= (number / 2) + 1; space++) {                   //Top half of diamond
+                for (row = space; row <= number; row++) {
+                    System.out.print(" ");
+                }
+                for (row = 1; row < space; row++) {
+                    System.out.print("* ");
+                }
+                System.out.print("*\n");
+            }
+
+
+
+        }
+
+        else {
+            number = (number + 1) / 2;
+
             for (space = 1; space <= number; space++) {                   //Top half of diamond
                 for (row = space; row <= number; row++) {
                     System.out.print(" ");
@@ -33,4 +52,4 @@ public class Assignment2 {
             }
         }
     }
-
+}
