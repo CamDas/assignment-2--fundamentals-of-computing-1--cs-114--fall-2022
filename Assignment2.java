@@ -5,33 +5,54 @@ public class Assignment2 {
         int number;
         int space;
         int row;
-        int numberClone = 1;
-        int spaceClone = 1;
-        int rowClone = 1;
-        System.out.println ("Enter a number:");
+        System.out.println("Enter a number:");
         Scanner scan = new Scanner(System.in);
         number = scan.nextInt();
 
         if (number % 2 == 0) {
 
-            for (space = 1; space <= (number / 2) + 1; space++) {                   //Top half of diamond
+            // First star of even diamond
+            for (space = 1; space <= (number) - 1; space++) {
+                System.out.print("  ");
+            }
+            System.out.println(" *");
+
+            // Top half of even diamond
+            for (space = 2; space <= (number / 2) + 1; space++) {
                 for (row = space; row <= number; row++) {
-                    System.out.print(" ");
+                    System.out.print("  ");
                 }
                 for (row = 1; row < space; row++) {
+                    System.out.print("* ");
+                }
+                for (row = 2; row < space; row++) {
                     System.out.print("* ");
                 }
                 System.out.print("*\n");
             }
 
+            // Bottom half of even diamond
+            for (space = (number / 2); space >= 2; space--) {
+                for (row = space; row <= number; row++) {
+                    System.out.print("  ");
+                }
+                for (row = 1; row < space; row++) {
+                    System.out.print("* ");
+                }
+                for (row = 2; row < space; row++) {
+                    System.out.print("* ");
+                }
+                System.out.print("*\n");
+            }
+            for (space = 1; space <= (number) - 1; space++) {
+                System.out.print("  ");
+            }
+            System.out.println(" *");
+        } else {
 
-
-        }
-
-        else {
+            // Top half of odd diamond
             number = (number + 1) / 2;
-
-            for (space = 1; space <= number; space++) {                   //Top half of diamond
+            for (space = 1; space <= number; space++) {
                 for (row = space; row <= number; row++) {
                     System.out.print(" ");
                 }
@@ -41,7 +62,8 @@ public class Assignment2 {
                 System.out.print("*\n");
             }
 
-            for (space = number - 1; space >= 1; space--) {                   //Bottom half of diamond
+            // Bottom half of odd diamond
+            for (space = number - 1; space >= 1; space--) {
                 for (row = space; row <= number; row++) {
                     System.out.print(" ");
                 }
